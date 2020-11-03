@@ -13,7 +13,7 @@ import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 
-import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 import { AppComponent } from './app.component';
 import { LancamentoPesquisaComponent } from './lancamento-pesquisa/lancamento-pesquisa.component';
@@ -50,7 +50,6 @@ import { MessageComponent } from './message/message.component';
     DropdownModule,
     InputMaskModule,
     FormsModule,
-
     CurrencyMaskModule
 
   ],

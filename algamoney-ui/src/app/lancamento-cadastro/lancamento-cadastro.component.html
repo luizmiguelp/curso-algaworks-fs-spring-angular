@@ -32,7 +32,7 @@
     </div>
 
     <div class="ui-g-12 ui-md-9 ui-fluid">
-      <label for="descricao">Descrição {{ descricao.errors | json }}</label>
+      <label for="descricao">Descrição </label>
       <input
         pInputText
         type="text"
@@ -72,17 +72,24 @@
         name="valor"
         ngModel
         #valor="ngModel"
+
       />
+
     </div>
 
+
     <div class="ui-g-12 ui-md-6 ui-fluid">
-      <label for="categoria">Categoria {{ categoria.value }}</label>
+      <label for="categoria">Categoria </label>
       <p-dropdown
         [options]="categorias"
         placeholder="Selecione"
         [autoWidth]="false"
-        #categoria
+        #categoria="ngModel"
+        name="categoria"
+        ngModel
+        required
       ></p-dropdown>
+
     </div>
 
     <div class="ui-g-12 ui-md-6 ui-fluid">
