@@ -141,8 +141,16 @@
         placeholder="Selecione"
         [autoWidth]="false"
         [filter]="true"
-        #cidade
+        #cidade="ngModel"
+        name="cidade"
+        ngModel
+        required
       ></p-dropdown>
+      <app-message
+      [control]="cidade"
+      error="required"
+      text="Selecione a Cidade"
+    ></app-message>
     </div>
 
     <div class="ui-g-12 ui-md-6 ui-fluid">
@@ -152,8 +160,16 @@
         placeholder="Selecione"
         [autoWidth]="false"
         [filter]="true"
-        #cidade
+        #estado="ngModel"
+        name="estado"
+        ngModel
+        required
       ></p-dropdown>
+      <app-message
+      [control]="estado"
+      error="required"
+      text="Selecione o Estado"
+    ></app-message>
     </div>
 
     <div class="ui-g-12">
