@@ -1,0 +1,28 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.algamoney.api.config.property.AlgamoneyApiProperty",
+      "name": "algamoney",
+      "type": "com.algamoney.api.config.property.AlgamoneyApiProperty"
+    },
+    {
+      "sourceType": "com.algamoney.api.config.property.AlgamoneyApiProperty",
+      "name": "algamoney.seguranca",
+      "sourceMethod": "public com.algamoney.api.config.property.AlgamoneyApiProperty.Seguranca getSeguranca() ",
+      "type": "com.algamoney.api.config.property.AlgamoneyApiProperty$Seguranca"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.algamoney.api.config.property.AlgamoneyApiProperty",
+      "name": "algamoney.origin-permitida",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.algamoney.api.config.property.AlgamoneyApiProperty$Seguranca",
+      "name": "algamoney.seguranca.enable-https",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}
