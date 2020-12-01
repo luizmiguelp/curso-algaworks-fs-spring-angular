@@ -17,8 +17,7 @@ import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 import {SharedModule} from '../shared/shared.module';
 import { LancamentoPesquisaComponent } from '../lancamento/lancamento-pesquisa/lancamento-pesquisa.component';
 import { LancamentoCadastroComponent } from '../lancamento/lancamento-cadastro/lancamento-cadastro.component';
-import { LancamentosGridComponent } from '../lancamento/lancamentos-grid/lancamentos-grid.component';
-
+ 
 
 @NgModule({
   imports: [
@@ -39,8 +38,7 @@ import { LancamentosGridComponent } from '../lancamento/lancamentos-grid/lancame
   ],
   declarations: [
     LancamentoPesquisaComponent,
-    LancamentoCadastroComponent,
-    LancamentosGridComponent,
+    LancamentoCadastroComponent
   ],
   exports: [
     LancamentoPesquisaComponent,

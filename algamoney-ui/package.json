@@ -23,6 +23,7 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "moment": "^2.29.1",
     "ng2-currency-mask": "^9.0.2",
     "ng2-input-mask": "0.0.7",
     "primeng": "^4.3.0",
