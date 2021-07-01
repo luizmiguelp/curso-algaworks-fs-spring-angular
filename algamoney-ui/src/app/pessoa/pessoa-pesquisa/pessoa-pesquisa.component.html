@@ -3,24 +3,68 @@
     <div class="ui-g-12">
       <h1>Pessoa</h1>
     </div>
+    <form autocomplete="off" (ngSubmit)="pesquisar()">
+      <div class="ui-g-12 ui-fluid">
+        <label>Nome</label>
+        <input type="text" pInputText name="nome" [(ngModel)]="filtro.nome" />
+      </div>
 
-    <div class="ui-g-12 ui-fluid">
-      <label>Nome</label>
-      <input type="text" pInputText>
-    </div>
-
-
-    <div class="ui-g-12">
-      <button pButton type="submit" label="Pesquisar"></button>
-    </div>
-
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Pesquisar"></button>
+      </div>
+    </form>
     <div class="ui-g">
       <div class="ui-g-12">
-        <app-pessoas-grid [pessoas]="pessoas"></app-pessoas-grid>
+        <p-dataTable
+          [value]="pessoas"
+          [responsive]="true"
+          emptyMessage="Nenhum Registro Encontrado"
+          [paginator]="true"
+          [rows]="filtro.itensPorPagina"
+          [lazy]="true"
+          [totalRecords]="totalRegistros"
+          (onLazyLoad)="aoMudarPagina($event)"
+          #tabela
+        >
+          <p-column field="nome" header="Nome"></p-column>
+          <p-column field="endereco.cidade" header="Cidade"></p-column>
+          <p-column field="endereco.estado" header="Estado"></p-column>
+          <p-column field="ativo" header="Status">
+            <ng-template let-pess="rowData" pTemplate="body">
+              <a
+                href="#"
+                [pTooltip]="pess.ativo ? 'Desativar' : 'Ativar'"
+                tooltipPosition="top"
+                (click)="alternarStatus(pess)">
+
+                {{ pess.ativo ? "Ativo" : "Inativo" }}
+              </a>
+            </ng-template>
+          </p-column>
+          <p-column styleClass="col-acao">
+            <ng-template let-pess="rowData" pTemplate="body">
+              <a
+                pButton
+                icon="fa-pencil"
+                pTooltip="Editar"
+                tooltipPosition="top"
+                [routerLink]="['/pessoas', pess.codigo]"
+              ></a>
+              <button
+                pButton
+                type="submit"
+                icon="fa-trash"
+                pTooltip="Excluir"
+                tooltipPosition="top"
+                (click)="confirmarExclusao(pess)"
+              ></button>
+            </ng-template>
+          </p-column>
+        </p-dataTable>
       </div>
     </div>
     <div class="ui-g-12">
-      <a pButton label="Nova Pessoa"></a>
+      <a pButton label="Nova Pessoa" routerLink="/pessoas/nova"></a>
     </div>
   </div>
 </div>

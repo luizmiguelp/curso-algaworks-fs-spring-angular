@@ -1,3 +1,4 @@
+import { PessoasRoutingModule } from './pessoas-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +18,6 @@ import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 import {SharedModule} from '../shared/shared.module';
 import { PessoaPesquisaComponent } from '../pessoa/pessoa-pesquisa/pessoa-pesquisa.component';
 import { PessoaCadastroComponent } from '../pessoa/pessoa-cadastro/pessoa-cadastro.component';
-import { PessoasGridComponent } from '../pessoa/pessoas-grid/pessoas-grid.component';
 
 
 
@@ -38,18 +38,16 @@ import { PessoasGridComponent } from '../pessoa/pessoas-grid/pessoas-grid.compon
     InputMaskModule,
     FormsModule,
 
-    SharedModule
+    SharedModule,
+    PessoasRoutingModule,
+
 
   ],
   declarations: [
 
     PessoaPesquisaComponent,
     PessoaCadastroComponent,
-    PessoasGridComponent,
   ],
-  exports: [
-    PessoaPesquisaComponent,
-    PessoaCadastroComponent,
-  ]
+  exports: []
 })
 export class PessoaModule { }

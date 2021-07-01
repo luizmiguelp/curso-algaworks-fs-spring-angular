@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,11 +14,12 @@ import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 
-
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
 import {SharedModule} from '../shared/shared.module';
+
 import { LancamentoPesquisaComponent } from '../lancamento/lancamento-pesquisa/lancamento-pesquisa.component';
 import { LancamentoCadastroComponent } from '../lancamento/lancamento-cadastro/lancamento-cadastro.component';
- 
+
 
 @NgModule({
   imports: [
@@ -34,15 +36,14 @@ import { LancamentoCadastroComponent } from '../lancamento/lancamento-cadastro/l
     InputMaskModule,
     FormsModule,
 
-    SharedModule
+    SharedModule,
+    LancamentosRoutingModule,
+
   ],
   declarations: [
     LancamentoPesquisaComponent,
     LancamentoCadastroComponent
   ],
-  exports: [
-    LancamentoPesquisaComponent,
-    LancamentoCadastroComponent,
-  ]
+  exports: []
 })
 export class LancamentoModule { }

@@ -1,8 +1,8 @@
 <div class="container">
-  <form action="">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
     <div class="ui-g">
       <div class="ui-g-12">
-        <h1>Nova Pessoa</h1>
+        <h1>{{ editando ? 'Edição de' : 'Nova'}} Pessoa </h1>
       </div>
     </div>
 
@@ -12,7 +12,7 @@
         pInputText
         type="text"
         name="nome"
-        ngModel
+        [(ngModel)]="pessoa.nome"
         #nome="ngModel"
         required
         minlength="3"
@@ -37,7 +37,7 @@
         pInputText
         type="text"
         name="logradouro"
-        ngModel
+        [(ngModel)]="pessoa.endereco.logradouro"
         #logradouro="ngModel"
         required
         minlength="3"
@@ -62,7 +62,7 @@
         pInputText
         type="number"
         name="numero"
-        ngModel
+        [(ngModel)]="pessoa.endereco.numero"
         #numero="ngModel"
         required
       />
@@ -79,7 +79,7 @@
         pInputText
         type="text"
         name="complemento"
-        ngModel
+        [(ngModel)]="pessoa.endereco.complemento"
         #complemento="ngModel"
         minlength="3"
       />
@@ -99,7 +99,7 @@
         type="text"
         name="bairro"
         required
-        ngModel
+        [(ngModel)]="pessoa.endereco.bairro"
         #bairro="ngModel"
         minlength="3"
       />
@@ -123,7 +123,7 @@
         mask="99.999-999"
         name="cep"
         required
-        ngModel
+        [(ngModel)]="pessoa.endereco.cep"
         #cep="ngModel"
       ></p-inputMask>
       <app-message
@@ -143,7 +143,7 @@
         [filter]="true"
         #cidade="ngModel"
         name="cidade"
-        ngModel
+        [(ngModel)]="pessoa.endereco.cidade"
         required
       ></p-dropdown>
       <app-message
@@ -162,7 +162,7 @@
         [filter]="true"
         #estado="ngModel"
         name="estado"
-        ngModel
+        [(ngModel)]="pessoa.endereco.estado"
         required
       ></p-dropdown>
        <app-message
@@ -177,10 +177,11 @@
       <button
         pButton
         type="button"
-        label="Voltar"
+        label="Nova"
         class="ui-button-info"
+        (click)="nova(f)"
       ></button>
-      <a href="javascript:;">Voltar para a pesquisa</a>
+      <a  routerLink="/pessoas">Voltar para a pesquisa</a>
     </div>
   </form>
 </div>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LogoutService } from './../../seguranca/logout.service';
+import { AuthService } from './../../seguranca/auth.service';
+import { Component, ErrorHandler, OnInit } from '@angular/core';
+import { ErrorHandlerService } from '../error-handler.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  exibindoMenu = false;
+  constructor(
+    public auth: AuthService,
+    private logoutService: LogoutService,
+    private router: Router,
+    private erroHandler: ErrorHandlerService
+  ) { }
 
   ngOnInit() {
   }
-
+  logout() {
+    this.logoutService.logout()
+      .then(() => {
+          this.router.navigate(['/login']);
+      })
+      .catch(error => this.erroHandler.handle(error));
+  }
 }

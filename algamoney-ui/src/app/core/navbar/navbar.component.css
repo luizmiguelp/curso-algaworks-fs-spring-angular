@@ -37,7 +37,9 @@
   text-decoration: none;
 }
 
-
+.navbar-menuitem.ativo {
+  background-color: #494541;
+}
 .navbar-menuitem a:hover {
   color: #fff;
 }
